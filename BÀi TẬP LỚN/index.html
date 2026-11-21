@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dự báo lượng truy cập website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="w">
+  <h1>Theo dõi lượng khách truy cập website</h1>
+   <div class="c">
+    <div class="bar">
+      <button class="p" id="real">Dùng dữ liệu theo dõi thật</button>
+      <button id="seed">Nạp dữ liệu thử</button>
+      <button id="demo">Dùng dữ liệu mẫu</button>
+      <label>Dự báo trước
+        <select id="h">
+          <option value="7">7 ngày</option>
+          <option value="14">14 ngày</option>
+          <option value="30" selected>30 ngày</option>
+          <option value="60">60 ngày</option>
+        </select>
+      </label>
+      <label>Tập kiểm tra
+        <select id="tn">
+          <option value="14">14 ngày cuối</option>
+          <option value="30" selected>30 ngày cuối</option>
+          <option value="60">60 ngày cuối</option>
+        </select>
+      </label>
+    </div>
+    <div class="n" id="info"></div>
+  </div>
+
+  <div class="c" id="live">
+    Đang online: <b id="on">0</b> &nbsp;&nbsp; Hôm nay: <b id="td">0</b> lượt vào
+  </div>
+
+  <div class="k" id="k"></div>
+
+  <div class="c">
+    <h2>Thực tế và dự báo</h2>
+    <div class="cv"><canvas id="ch"></canvas></div>
+    <div class="n">Bấm vào tên mô hình trong chú thích để bật hoặc tắt đường dự đoán trên tập kiểm tra. Đường nét đứt là dự báo tương lai của mô hình tốt nhất.</div>
+  </div>
+
+  <div class="c">
+    <h2>Sai số trên tập kiểm tra</h2>
+    <div class="o"><table id="m"></table></div>
+    <div class="n">Mô hình tốt nhất được chọn theo RMSE thấp nhất.</div>
+  </div>
+
+  <div class="c">
+    <h2>Bảng dự báo</h2>
+    <div class="o"><table id="t"></table></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
